@@ -1,0 +1,1218 @@
+{
+  "paper": {
+    "name": "A4",
+    "leftMargin": 0.5,
+    "rightMargin": 0.5,
+    "topMargin": 0.5,
+    "bottomMargin": 0.5,
+    "isPortriat": true
+  },
+  "modelVersion": 2.01,
+  "defaultSchema": "Default",
+  "server": {
+    "objectType": "Server_LOGICAL",
+    "name": "Default",
+    "schemas": [
+      {
+        "objectType": "Schema_LOGICAL",
+        "name": "Default",
+        "tables": [
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Commet",
+            "comment": "",
+            "oldName": "",
+            "fields": [],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "User",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "username",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "user login",
+                "oldName": "username"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "password",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "password"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "password2",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "password2"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "fist_name",
+                "type": "CHAR VARYING",
+                "length": 40,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "user name",
+                "oldName": "fist_name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "second_name",
+                "type": "CHAR VARYING",
+                "length": 40,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "second_name"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "surname",
+                "type": "CHAR VARYING",
+                "length": 40,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "surname"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "hobbies",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "Null",
+                "defaultValue": "NULL",
+                "comment": "FK table hobbies",
+                "oldName": "hobbies"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "photo",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "photo user",
+                "oldName": "photo"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "video",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "video user",
+                "oldName": "video"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "message",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "FK table message",
+                "oldName": "message"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "follower",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "FK follower",
+                "oldName": "follower"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "news",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "FK news",
+                "oldName": "news"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "groups",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "FK groups",
+                "oldName": "groups"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_User_Follower_1",
+                "fields": [],
+                "referencedSchema": "Default",
+                "referencedTable": "Follower",
+                "referencedFields": [],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_User_Hobbies_1",
+                "fields": [],
+                "referencedSchema": "Default",
+                "referencedTable": "Hobbies",
+                "referencedFields": [],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_User_Message_1",
+                "fields": [],
+                "referencedSchema": "Default",
+                "referencedTable": "Message",
+                "referencedFields": [],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_User_Photo_1",
+                "fields": [],
+                "referencedSchema": "Default",
+                "referencedTable": "Photo",
+                "referencedFields": [],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_User_Video_1",
+                "fields": [],
+                "referencedSchema": "Default",
+                "referencedTable": "Video",
+                "referencedFields": [],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_User_News_1",
+                "fields": [],
+                "referencedSchema": "Default",
+                "referencedTable": "NewsPage",
+                "referencedFields": [],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_User_Group_1",
+                "fields": [],
+                "referencedSchema": "Default",
+                "referencedTable": "Group",
+                "referencedFields": [],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              },
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_User_Comment_1",
+                "fields": [],
+                "referencedSchema": "Default",
+                "referencedTable": "Comment",
+                "referencedFields": [],
+                "sourceCardinality": "OneOrManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": [
+              {
+                "objectType": "Unique_LOGICAL",
+                "name": "username",
+                "fields": [
+                  "username"
+                ],
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Hobbies",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "title",
+                "type": "CHAR VARYING",
+                "length": 40,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "names hobbie",
+                "oldName": "title"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "description",
+                "type": "CHAR VARYING",
+                "length": 500,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "description"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [
+              {
+                "objectType": "Unique_LOGICAL",
+                "name": "title",
+                "fields": [
+                  "title"
+                ],
+                "comment": "It's title unique element ",
+                "oldName": ""
+              }
+            ]
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Video",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "title",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "title"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "url",
+                "type": "CHAR VARYING",
+                "length": 200,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "path to photo",
+                "oldName": "url"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Photo",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "title",
+                "type": "CHAR VARYING",
+                "length": 30,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "title"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "url",
+                "type": "CHAR VARYING",
+                "length": 200,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "path to photo",
+                "oldName": "url"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": [],
+            "primaryKey": {
+              "objectType": "PrimaryKey_LOGICAL",
+              "name": "",
+              "fields": [],
+              "oldName": ""
+            }
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Message",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "message ",
+                "type": "CHAR VARYING",
+                "length": 500,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "body message",
+                "oldName": "message "
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "date",
+                "type": "DATE",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "auto add now",
+                "oldName": "date"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Follower",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "user",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "FK user",
+                "oldName": "user"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Group",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "title",
+                "type": "CHAR VARYING",
+                "length": 50,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "title"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "discription",
+                "type": "CHAR VARYING",
+                "length": 500,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "discription"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "date",
+                "type": "DATE",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "date create group",
+                "oldName": "date"
+              }
+            ],
+            "foreignKeys": [
+              {
+                "objectType": "ForeignKey_LOGICAL",
+                "name": "fk_Group_NewsPage_1",
+                "fields": [],
+                "referencedSchema": "Default",
+                "referencedTable": "NewsPage",
+                "referencedFields": [],
+                "sourceCardinality": "ManyRelationship",
+                "targetCardinality": "ManyRelationship",
+                "comment": "",
+                "oldName": ""
+              }
+            ],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "Comment",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "title ",
+                "type": "CHAR VARYING",
+                "length": 50,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "title comment",
+                "oldName": "title "
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "discription",
+                "type": "CHAR VARYING",
+                "length": 500,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "discription comment",
+                "oldName": "discription"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "date ",
+                "type": "DATE",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": false,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "date create comment",
+                "oldName": "date "
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          },
+          {
+            "objectType": "Table_LOGICAL",
+            "name": "NewsPage",
+            "comment": "",
+            "oldName": "",
+            "fields": [
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "photo",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "photo"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "title",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "title"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "discription",
+                "type": "CHAR VARYING",
+                "length": 255,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "discription"
+              },
+              {
+                "objectType": "TableField_LOGICAL",
+                "name": "date",
+                "type": "DATE",
+                "length": 0,
+                "decimals": 0,
+                "isNullable": true,
+                "defaultType": "None",
+                "defaultValue": "",
+                "comment": "",
+                "oldName": "date"
+              }
+            ],
+            "foreignKeys": [],
+            "indexes": [],
+            "uniques": []
+          }
+        ]
+      }
+    ]
+  },
+  "diagrams": [
+    {
+      "name": "Diagram 1",
+      "paperWidth": 1,
+      "paperHeight": 1,
+      "tableFont": "Arial Unicode MS",
+      "tableFontSize": 14,
+      "isBalckWhite": false,
+      "showDBSchemaName": false,
+      "showViewRelations": true,
+      "notation": "default",
+      "showFieldComment": false,
+      "showTableComment": false,
+      "shapes": [
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "User",
+          "x": 370,
+          "y": 40,
+          "width": 200,
+          "height": 210,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Follower",
+          "x": 580,
+          "y": 360,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Hobbies",
+          "x": 40,
+          "y": 160,
+          "width": 200,
+          "height": 90,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Message",
+          "x": 250,
+          "y": 590,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Photo",
+          "x": 110,
+          "y": 290,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Video",
+          "x": 110,
+          "y": 450,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "NewsPage",
+          "x": 760,
+          "y": 60,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Group",
+          "x": 760,
+          "y": 520,
+          "width": 200,
+          "height": 100,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "table",
+          "schemaName": "Default",
+          "tableName": "Comment",
+          "x": 520,
+          "y": 540,
+          "width": 200,
+          "height": 110,
+          "isBold": false,
+          "titleColor": {
+            "r": 55,
+            "g": 131,
+            "b": 192,
+            "a": 1
+          }
+        },
+        {
+          "type": "note",
+          "name": "Note 1",
+          "x": 370,
+          "y": 670,
+          "width": 160,
+          "height": 80,
+          "text": "I'm think message need secod table\r\n",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        },
+        {
+          "type": "note",
+          "name": "Note 2",
+          "x": 680,
+          "y": 430,
+          "width": 100,
+          "height": 50,
+          "text": "!!!\r\n",
+          "style": "note",
+          "noteColor": {
+            "r": 255,
+            "g": 232,
+            "b": 107,
+            "a": 1
+          },
+          "fontName": "Arial Unicode MS",
+          "fontSize": 14,
+          "isFontBold": false,
+          "isFontItalic": false
+        }
+      ],
+      "layers": [],
+      "relations": [
+        {
+          "name": "fk_User_Follower_1",
+          "sourceTableName": "User",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 550,
+              "y": 265
+            },
+            {
+              "x": 600,
+              "y": 280
+            },
+            {
+              "x": 600,
+              "y": 345
+            }
+          ],
+          "label": {
+            "x": 558,
+            "y": 255,
+            "width": 132,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_User_Hobbies_1",
+          "sourceTableName": "User",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 355,
+              "y": 110
+            },
+            {
+              "x": 140,
+              "y": 110
+            },
+            {
+              "x": 140,
+              "y": 145
+            }
+          ],
+          "label": {
+            "x": 235,
+            "y": 80,
+            "width": 130,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_User_Message_1",
+          "sourceTableName": "User",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 480,
+              "y": 265
+            },
+            {
+              "x": 480,
+              "y": 480
+            },
+            {
+              "x": 360,
+              "y": 480
+            },
+            {
+              "x": 360,
+              "y": 575
+            }
+          ],
+          "label": {
+            "x": 488,
+            "y": 255,
+            "width": 136,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_User_Photo_1",
+          "sourceTableName": "User",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 410,
+              "y": 265
+            },
+            {
+              "x": 270,
+              "y": 275
+            }
+          ],
+          "label": {
+            "x": 297,
+            "y": 213,
+            "width": 115,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_User_Video_1",
+          "sourceTableName": "User",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 440,
+              "y": 265
+            },
+            {
+              "x": 440,
+              "y": 420
+            },
+            {
+              "x": 230,
+              "y": 420
+            },
+            {
+              "x": 230,
+              "y": 435
+            }
+          ],
+          "label": {
+            "x": 328,
+            "y": 213,
+            "width": 114,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_User_News_1",
+          "sourceTableName": "User",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 585,
+              "y": 60
+            },
+            {
+              "x": 695,
+              "y": 60
+            },
+            {
+              "x": 695,
+              "y": 110
+            },
+            {
+              "x": 745,
+              "y": 110
+            }
+          ],
+          "label": {
+            "x": 575,
+            "y": 40,
+            "width": 113,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_User_Group_1",
+          "sourceTableName": "User",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 585,
+              "y": 190
+            },
+            {
+              "x": 810,
+              "y": 190
+            },
+            {
+              "x": 810,
+              "y": 505
+            }
+          ],
+          "label": {
+            "x": 575,
+            "y": 142,
+            "width": 118,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_Group_NewsPage_1",
+          "sourceTableName": "Group",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 860,
+              "y": 505
+            },
+            {
+              "x": 860,
+              "y": 230
+            },
+            {
+              "x": 860,
+              "y": 210
+            },
+            {
+              "x": 860,
+              "y": 175
+            }
+          ],
+          "label": {
+            "x": 844,
+            "y": 475,
+            "width": 156,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        },
+        {
+          "name": "fk_User_Comment_1",
+          "sourceTableName": "User",
+          "sourceSchemaName": "Default",
+          "lineWidth": 1,
+          "visible": true,
+          "vertices": [
+            {
+              "x": 510,
+              "y": 265
+            },
+            {
+              "x": 510,
+              "y": 270
+            },
+            {
+              "x": 590,
+              "y": 525
+            }
+          ],
+          "label": {
+            "x": 512,
+            "y": 205,
+            "width": 138,
+            "height": 40,
+            "fontName": "Arial Unicode MS",
+            "fontSize": 14,
+            "fontColor": {
+              "r": 204,
+              "g": 204,
+              "b": 204,
+              "a": 1
+            },
+            "isFontBold": false,
+            "isFontItalic": false,
+            "isVisible": false
+          }
+        }
+      ],
+      "viewRelations": []
+    }
+  ]
+}
