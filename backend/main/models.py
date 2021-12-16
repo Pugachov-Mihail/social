@@ -2,31 +2,31 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
-
-def user_path(user, filename):
-    return 'user_{0}/{1}'.format(user.username)
-
+from config import settings
 
 
 class UserModel(AbstractUser):
     """User model"""
+    password2 = models.CharField(max_length=40)
     surname = models.CharField(max_length=40, verbose_name="Фамилия", blank=True)
     photo = models.ForeignKey("PhotoFile", on_delete=models.PROTECT, null=True, blank=True)
     video = models.ForeignKey("VideoFile", on_delete=models.PROTECT, null=True, blank=True)
     hobbies = models.ForeignKey("Hobbie", on_delete=models.PROTECT, null=True, blank=True)
     comments = models.ForeignKey("Comment", on_delete=models.CASCADE, null=True, blank=True)
 
+def user_directory_path(user, filename):
+    return 'photo/user_{0}/{1}'.format(user.url, filename)
 
 class PhotoFile(models.Model):
     """Photo file user"""
     title = models.CharField(max_length=30, verbose_name='Фото пользователя', blank=True)
-    url = models.ImageField(upload_to='photo/%Y/%m/%d/{username}'.format(username=user_path))
-
+    url = models.ImageField(upload_to=user_directory_path)
 
 
 class VideoFile(models.Model):
+
     title = models.CharField(max_length=30, verbose_name='Видео пользователя', blank=True)
-    url = models.FileField(upload_to='photo/%Y/%m/%d/{username}'.format(username=user_path))
+    url = models.FileField(upload_to='photo/%Y/%m/%d/%s'.format(user_directory_path))
 
 
 class Hobbie(models.Model):

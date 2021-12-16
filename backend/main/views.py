@@ -13,6 +13,5 @@ class UserList(ListAPIView):
         "user": serializer_class.data
     }
     def get(self, request):
-
         return Response(self.user)
 

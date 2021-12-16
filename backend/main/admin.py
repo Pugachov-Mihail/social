@@ -6,3 +6,4 @@ from .models import *
 admin.site.register(UserModel)
 admin.site.register(Hobbie)
 admin.site.register(Comment)
+admin.site.register(PhotoFile)

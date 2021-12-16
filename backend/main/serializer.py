@@ -1,8 +1,36 @@
 from rest_framework import serializers
-from .models import UserModel
+from .models import UserModel, PhotoFile
+
+
+
+class PhotoFileSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = PhotoFile
+        fields = (
+            "title",
+            "url"
+        )
 
 
 class UserModelSerialize(serializers.ModelSerializer):
+    password2 = serializers.CharField()
+    username = serializers.CharField()
+    photo = PhotoFileSerializer(many=False)
+    def save(self, **kwargs):
+        user = UserModel(
+            email=self.validated_data['email'],
+            username=self.validated_data['username'])
+        password = self.validated_data['password']
+        password2 = self.validated_data['password2']
+        if password != password2:
+            raise serializers.ValidationError({password: "Пароли не совпадают"})
+        user.set_password(password)
+        user.save()
+        return user
+
     class Meta:
         model = UserModel
-        fields = "__all__"
+        fields = ('username', 'password', 'password2', 'email', "photo",
+        "first_name", "last_name", "surname")
+
+
