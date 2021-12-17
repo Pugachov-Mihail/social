@@ -19,7 +19,7 @@ class UserList(ListAPIView):
 class CreateUser(CreateAPIView):
     queryset = UserModel.objects.all()
     serializer_class = UserModelSerialize
-    permission_classes = [permissions.AllowAny]
+    #permission_classes = [permissions.AllowAny]
 
     def post(self, request, *args, **kwargs):
         serializer = UserModelSerialize(data=request.data)

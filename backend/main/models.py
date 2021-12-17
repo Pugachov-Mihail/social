@@ -11,10 +11,10 @@ class UserModel(AbstractUser):
     """User model"""
     password2 = models.CharField(max_length=40)
     surname = models.CharField(max_length=40, verbose_name="Фамилия", blank=True)
-    photo = models.ManyToManyField("PhotoFile", null=True, blank=True)
+    photo = models.ManyToManyField("PhotoFile", null=True, blank=True, related_name="photos")
     video = models.ManyToManyField("VideoFile", null=True, blank=True)
     comments = models.ManyToManyField("Comment", null=True, blank=True)
-    hobbies = models.ManyToManyField("Hobbie", null=True, blank=True)
+    hobbies = models.ManyToManyField("Hobbie", null=True, blank=True, related_name="hobbie")
 
 
 def user_directory_path(user, filename):
@@ -23,7 +23,7 @@ def user_directory_path(user, filename):
 class PhotoFile(models.Model):
     """Photo file user"""
     title = models.CharField(max_length=30, verbose_name='Фото пользователя', blank=True)
-    url = models.ImageField(upload_to=user_directory_path)
+    url = models.ImageField(upload_to=user_directory_path, blank=True)
 
 
 class VideoFile(models.Model):
@@ -32,8 +32,8 @@ class VideoFile(models.Model):
 
 
 class Hobbie(models.Model):
-    title = models.CharField(max_length=40, blank=False, null=False, unique=True)
-    discription = models.TextField(max_length=500)
+    title = models.CharField(max_length=40, blank=True, null=True, unique=True)
+    discription = models.TextField(max_length=500, blank=True)
     created = models.DateTimeField(auto_now_add=True)
 
 

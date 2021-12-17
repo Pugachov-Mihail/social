@@ -21,6 +21,7 @@ class UserModelSerialize(serializers.ModelSerializer):
     username = serializers.CharField()
     photo = PhotoFileSerializer(many=True)
     hobbies = HobbieSerializer(many=True)
+
     def save(self, **kwargs):
         user = UserModel(
             email=self.validated_data['email'],
