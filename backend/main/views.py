@@ -41,3 +41,12 @@ class ProfilUserView(RetrieveAPIView):
 class ProfilUpdateView(RetrieveUpdateAPIView):
     queryset = UserModel.objects.all()
     serializer_class = UserModelSerialize
+
+
+class HobbiesUsersView(RetrieveAPIView):
+    queryset = Hobbie.objects.all()
+    serializer_class = UserModelSerialize
+
+class HobbiesUsersUpdateView(RetrieveUpdateAPIView):
+    queryset = Hobbie.objects.all()
+    serializer_class = UserModelSerialize

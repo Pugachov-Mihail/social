@@ -9,8 +9,8 @@ from config import settings
 
 class UserModel(AbstractUser):
     """User model"""
-    password2 = models.CharField(max_length=40)
-    surname = models.CharField(max_length=40, verbose_name="Фамилия", blank=True)
+    password2 = models.CharField(max_length=40, verbose_name="Повторый пароль")
+    surname = models.CharField(max_length=40, verbose_name="Отчество", blank=True)
     photo = models.ManyToManyField("PhotoFile", null=True, blank=True, related_name="photos")
     video = models.ManyToManyField("VideoFile", null=True, blank=True)
     comments = models.ManyToManyField("Comment", null=True, blank=True)
