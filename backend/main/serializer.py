@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UserModel, PhotoFile
+from .models import UserModel, PhotoFile, Hobbie
 
 
 
@@ -7,15 +7,20 @@ class PhotoFileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = PhotoFile
         fields = (
-            "title",
-            "url"
+           "title",
+            "url",
         )
+
+class HobbieSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Hobbie
+        fields = "__all__"
 
 
 class UserModelSerialize(serializers.ModelSerializer):
-    password2 = serializers.CharField()
     username = serializers.CharField()
-    photo = PhotoFileSerializer(many=False)
+    photo = PhotoFileSerializer(many=True)
+    hobbies = HobbieSerializer(many=True)
     def save(self, **kwargs):
         user = UserModel(
             email=self.validated_data['email'],
@@ -30,7 +35,8 @@ class UserModelSerialize(serializers.ModelSerializer):
 
     class Meta:
         model = UserModel
-        fields = ('username', 'password', 'password2', 'email', "photo",
-        "first_name", "last_name", "surname")
-
+        fields = (
+            'username', "first_name", "last_name", "surname",
+            'email', "photo", "hobbies"
+        )
 
