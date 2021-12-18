@@ -1,5 +1,6 @@
 from djangochannelsrestframework import permissions
-from rest_framework.generics import ListAPIView, RetrieveAPIView, RetrieveUpdateAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, RetrieveAPIView, RetrieveUpdateAPIView, CreateAPIView, \
+    RetrieveDestroyAPIView
 from rest_framework.response import Response
 
 from .serializer import UserModelSerialize, HobbieSerializer
@@ -43,13 +44,34 @@ class ProfilUpdateView(RetrieveUpdateAPIView):
     serializer_class = UserModelSerialize
 
 
+#Create and destroy Hobbies
+
 class HobbiesUsersView(RetrieveAPIView):
     queryset = UserModel.objects.all()
     serializer_class = UserModelSerialize
 
+
+#Сделать завтра создание хобби от пользователя
+class HobbiesUsersView(CreateAPIView):
+    queryset = Hobbie.objects.all()
+    serializer_class = HobbieSerializer
+
+    def get_queryset(self):
+        user = self.kwargs['pk']
+        print("Ndsadasdasdas", user)
+        try:
+            return Hobbie.objects.filter(id=user)
+        except:
+            return Response(status=self.serializer_class.errors)
+
+
+class HobbiesDestroy(RetrieveDestroyAPIView):
+    queryset = Hobbie.objects.all()
+    serializer_class = HobbieSerializer
+
 class HobbiesUsersUpdateView(RetrieveUpdateAPIView):
     serializer_class = HobbieSerializer
-    
+
     def get_queryset(self):
         user = self.kwargs['pk']
         print("Ndsadasdasdas", user)
