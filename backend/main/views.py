@@ -44,9 +44,16 @@ class ProfilUpdateView(RetrieveUpdateAPIView):
 
 
 class HobbiesUsersView(RetrieveAPIView):
-    queryset = Hobbie.objects.all()
+    queryset = UserModel.objects.all()
     serializer_class = UserModelSerialize
 
 class HobbiesUsersUpdateView(RetrieveUpdateAPIView):
-    queryset = Hobbie.objects.all()
-    serializer_class = UserModelSerialize
+    serializer_class = HobbieSerializer
+    
+    def get_queryset(self):
+        user = self.kwargs['pk']
+        print("Ndsadasdasdas", user)
+        try:
+            return Hobbie.objects.filter(id=user)
+        except:
+            return Response(status=self.serializer_class.errors)
